@@ -1,0 +1,13 @@
+
+update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Description of what the lane does"
+  lane :refresh_dsyms do
+   download_dsyms # Download dSYM files from iTC
+   upload_symbols_to_crashlytics # Upload them to Crashlytics
+   clean_build_artifacts # Delete the local dSYM files
+end
+end
